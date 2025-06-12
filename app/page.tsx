@@ -1,5 +1,5 @@
 // 'use client'
-import Image from "next/image";
+
 import Intro from '@/components/intro';
 import Marquee from '@/components/marquee';
 import Recentposts from '@/components/recent-posts';

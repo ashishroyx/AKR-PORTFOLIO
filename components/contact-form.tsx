@@ -27,7 +27,7 @@ export default function ContactForm() {
     }
   })
 
-  const processForm: SubmitHandler<Inputs> = async data => {
+  const processForm: SubmitHandler<Inputs> = async () => {
     await new Promise(resolve => setTimeout(resolve, 1000))
     toast.success('Message "sent" (simulated)!')
     reset()
@@ -148,6 +148,7 @@ export default function ContactForm() {
           </p>
         </form>
       </div>
-    </section>
-  )
-}
+      </section>
+    )
+  }
+

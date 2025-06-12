@@ -1,64 +1,35 @@
 ---
-  title: Introduction to NextJs
-  summary: NextJs is a powerful React framework that makes it easy to build server-rendered React applications. This post will introduce you to the basics of NextJs.
-  image: /posts/intoduction-to-nextjs.webp
-  author: 'Ashish Kumar Roy'
-  publishedAt: '2025-06-07'
+title: Understanding Server-Side Rendering in Next.js
+summary: Learn what server-side rendering (SSR) is, how it works in Next.js, and why it matters for performance and SEO.
+image: /posts/intoduction-to-nextjs.webp
+author: 'Ashish Kumar Roy'
+publishedAt: '2025-06-08'
 ---
 
-NextJs is a powerful React framework that makes it easy to build server-rendered
-React applications. This post will introduce you to the basics of NextJs.
+Next.js is known for its powerful support for **Server-Side Rendering (SSR)** — a technique that generates HTML for a page on each request.
 
-## What is NextJs?
+## What is Server-Side Rendering?
 
-NextJs is a React framework that allows you to build server-rendered React
-applications with ease. It provides a number of features out of the box, such as
-server-side rendering, static site generation, and API routes, that make it easy
-to build fast and scalable React applications.
+In SSR, your page is rendered on the server at request time, then sent as fully-rendered HTML to the browser. This is different from Client-Side Rendering (CSR), where the browser builds the page after downloading JavaScript.
 
-```jsx
-export default function Home() {
-  return <h1>Hello, NextJs!</h1>
+SSR improves:
+
+- **Performance** on slower devices
+- **SEO** since search engines can crawl rendered content
+- **First Page Load Speed** especially for dynamic content
+
+## How to Use SSR in Next.js
+
+Next.js allows you to opt into SSR at the page level using the `getServerSideProps` function.
+
+```tsx
+export async function getServerSideProps() {
+  const res = await fetch('https://api.example.com/data')
+  const data = await res.json()
+
+  return {
+    props: {
+      data
+    }
+  }
 }
-```
-
-## Why use NextJs?
-
-NextJs is a great choice for building server-rendered React applications because
-it provides a number of features that make it easy to build fast and scalable
-applications. Some of the key features of NextJs include:
-
-- Server-side rendering: NextJs allows you to render your React components on
-  the server, which can improve performance and SEO.
-- Static site generation: NextJs can generate static HTML files for your pages
-  at build time, which can improve performance and reduce hosting costs.
-- API routes: NextJs allows you to create API routes that can be used to fetch
-  data from external APIs or perform server-side logic.
-
-## How to use NextJs
-
-To use NextJs, you need to create a new NextJs project by running the following
-command:
-
-```bash
-npx create-next-app my-app
-```
-
-This will create a new NextJs project in a directory called `my-app`. You can
-then navigate to the project directory and start the development server by
-running the following command:
-
-```bash
-cd my-app
-npm run dev
-```
-
-This will start the development server and open your NextJs application in your
-browser. You can then start building your application by creating new pages,
-components, and API routes.
-
-## Conclusion
-
-NextJs is a powerful React framework that makes it easy to build server-rendered
-React applications. This post has introduced you to the basics of NextJs and
-explained why you might want to use it in your projects.
