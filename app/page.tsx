@@ -14,11 +14,11 @@ export default function Home() {
       <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8">
         <Intro />
           <div className="mb-12">
-            <Marquee />
+            {/* <Marquee /> */}
           </div>
+        <RecentProjects/>
         <Recentposts/>
 
-        <RecentProjects/>
 
       </div>
     </section>
