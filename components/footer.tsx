@@ -41,8 +41,8 @@ const navigation = [
 
 export default function Footer() {
   return (
-    <footer className="py-8">
-      <div className="mx-auto w-full max-w-6xl px-4">
+    <footer className="py-5">
+      {/* <div className="mx-auto w-full max-w-6xl px-4">
         <div className="md:flex md:items-center md:justify-between">
           <div className="flex justify-center space-x-6 md:order-2">
             {navigation.map((item) => (
@@ -57,14 +57,14 @@ export default function Footer() {
                 <item.icon aria-hidden="true" className="h-5 w-5" />
               </a>
             ))}
-          </div>
+          </div> */}
           <div className="mt-8 md:order-1 md:mt-0">
             <p className="text-center text-xs leading-5 text-muted-foreground">
               &copy; {new Date().getFullYear()}
             </p>
           </div>
-        </div>
-      </div>
+        {/* </div>
+      </div> */}
     </footer>
   )
 }

@@ -8,7 +8,7 @@ export default function Intro() {
       {/* Image Section */}
       <div className='w-[130px] md:w-auto'>
         <Image
-          className='rounded-lg grayscale mx-auto md:mx-0'
+          className='rounded-full mx-auto md:mx-0'
           src={authorImage}
           alt='Ashish Kumar Roy'
           width={175}
@@ -23,9 +23,11 @@ export default function Intro() {
           Hey, I am Ashish Kumar Roy
         </h1>
         <p className='mt-4 text-sm sm:text-base font-light text-muted-foreground max-w-md mx-auto md:mx-0'>
-          Crafting intuitive interfaces that connect design with experience. I’m
-          a frontend developer from Delhi, India — turning ideas into
-          responsive, engaging visuals for the modern web.
+          23, I ship fast, break often, and learn faster. Deep in code, deeper in problem-solving. 
+          Built from curiosity, mistakes, and long nights. Always chasing what’s next.
+        </p>
+        <p className='mt-4 text-sm sm:text-base font-light text-muted-foreground max-w-md mx-auto md:mx-0'  >
+          If it’s ambitious and real, I’m there.
         </p>
 
         <div className='mt-6'>
