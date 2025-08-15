@@ -27,13 +27,13 @@ export default function Intro() {
           23, I ship fast, break often, and learn faster. Deep in code, deeper in problem-solving. 
           Built from curiosity, mistakes, and long nights. Always chasing what’s next.
         </p>
-        <p className='mt-4 text-sm sm:text-base font-light text-muted-foreground max-w-md mx-auto  '  >
+        <p className='mt-1 text-sm sm:text-base font-light text-muted-foreground max-w-md mx-auto  '  >
           If it’s ambitious and real, I’m there.
         </p>
 
-        <div className='mt-6'>
+        <div className='mt-4 '>
           <a href='/ashish-kumar-roy-cv.pdf' download>
-            <Button className='px-5 py-2 text-sm'>Download CV</Button>
+            <Button className='px-5 py-2 text-sm border border-border shadow-lg shadow-black/20 dark:shadow-white/20'>Download CV</Button>
           </a>
         </div>
       </div>

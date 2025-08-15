@@ -23,10 +23,10 @@ export default function ThemeToggle() {
       size='sm'
       variant='ghost'
       onClick={() => {
-        setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+        setTheme(resolvedTheme === 'light' ? 'light' : 'dark')
       }}
     >
-      {resolvedTheme === 'light' ? (
+      {resolvedTheme === 'dark' ? (
         <SunIcon className='size-4 text-orange-300' />
       ) : (
         <MoonIcon className='size-4 text-sky-950' />
