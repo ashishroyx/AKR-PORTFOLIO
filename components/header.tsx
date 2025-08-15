@@ -40,7 +40,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <ul className='flex items-center gap-2 text-sm font-light text-muted-foreground sm:gap-9'>
+        <ul className='flex items-center gap-2 text-sm font-semibold text-muted-foreground sm:gap-9'>
           <li className='transition-colors hover:text-foreground'>
             <Link href='/blogs'>Blogs</Link>
           </li>
