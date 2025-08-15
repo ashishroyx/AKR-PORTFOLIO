@@ -20,16 +20,16 @@ export default function ThemeToggle() {
 
   return (
     <Button
-      size='sm'
+      size='lg'
       variant='ghost'
       onClick={() => {
         setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
       }}
     >
       {resolvedTheme === 'light' ? (
-        <SunIcon className='size-4 text-orange-300' />
+        <SunIcon className='size-4 text-yellow-600' />
       ) : (
-        <MoonIcon className='size-4 text-sky-950' />
+        <MoonIcon className='size-4 text-gray-300' />
       )}
 
       <span className='sr-only'>Toggle theme</span>
