@@ -27,7 +27,7 @@ export default function Intro() {
           23, I ship fast, break often, and learn faster. Deep in code, deeper in problem-solving. 
           Built from curiosity, mistakes, and long nights. Always chasing what’s next.
         </p>
-        <p className='mt-1 text-sm sm:text-base font-semibold text-muted-foreground max-w-md mx-auto  '  >
+        <p className='mt-1 text-sm sm:text-base font-bold text-muted-foreground max-w-md mx-auto  '  >
           If it’s ambitious and real, I’m there.
         </p>
 

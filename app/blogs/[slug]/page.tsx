@@ -61,7 +61,7 @@ export default async function Post({ params }: PageProps) {
         </header>
 
         {/* 📄 Main Content */}
-        <main className="prose dark:prose-invert mt-16 prose-headings:mb-6 prose-p:mb-5 prose-li:mb-3 prose-img:my-6">
+        <main className="prose dark:prose-invert mt-0 prose-headings:mb-6 prose-p:mb-5 prose-li:mb-3 prose-img:my-6">
           <MDXContent source={content} />
         </main>
 
