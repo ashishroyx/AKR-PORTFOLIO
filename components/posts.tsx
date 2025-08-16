@@ -15,7 +15,7 @@ export default function Posts({ posts }: { posts: PostMetadata[] }) {
             >
               <div className="max-w-lg">
                 <p className="text-lg font-semibold">{post.title}</p>
-                <p className="mt-1 line-clamp-2 text-sm font-light text-muted-foreground">
+                <p className="mt-1 line-clamp-2 text-sm font-semibold text-muted-foreground">
                   {post.summary}
                 </p>
               </div>
