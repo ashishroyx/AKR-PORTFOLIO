@@ -37,6 +37,7 @@ export default function Header() {
         <div>
           <Link href='/' className='font-serif text-2xl font-bold'>
             AKR.
+            {/* <p></></p> */}
           </Link>
         </div>
 

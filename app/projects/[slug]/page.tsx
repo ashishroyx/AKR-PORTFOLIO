@@ -61,7 +61,6 @@ export default async function Project({
         <main className="prose mt-16 dark:prose-invert prose-headings:mb-6 prose-p:mb-5 prose-li:mb-3 prose-img:my-6">
           <MDXContent source={content} />
 
-          {/* Repo Button */}
      {repo && (
   <div className="mt-8 flex justify-center">
     <Link

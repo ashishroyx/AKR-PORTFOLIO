@@ -35,7 +35,7 @@ export default function ContactForm() {
 
   return (
     <section className='relative isolate flex flex-col items-center justify-center px-4 py-16 sm:px-6 lg:px-8'>
-      {/* Background pattern */}
+      
       <svg
         className='absolute inset-0 -z-10 h-full w-full stroke-zinc-200 opacity-75 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] dark:stroke-zinc-700'
         aria-hidden='true'
@@ -78,11 +78,11 @@ export default function ContactForm() {
         </p>
       </div>
 
-      {/* Form */}
+      
       <div className='w-full max-w-3xl'>
         <form onSubmit={handleSubmit(processForm)} noValidate>
           <div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>
-            {/* Name */}
+           
             <div>
               <Input
                 id='name'
@@ -98,7 +98,7 @@ export default function ContactForm() {
               )}
             </div>
 
-            {/* Email */}
+            
             <div>
               <Input
                 type='email'
@@ -114,7 +114,7 @@ export default function ContactForm() {
               )}
             </div>
 
-            {/* Message */}
+            
             <div className='sm:col-span-2'>
               <Textarea
                 rows={4}
