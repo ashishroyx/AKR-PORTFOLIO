@@ -19,7 +19,7 @@
     "grey-matter": "^0.0.0",
     "lucide-react": "^0.513.0",
     "next": "^16.2.1",
-    "next-mdx-remote": "^5.0.0",
+    "next-mdx-remote": "^6.0.0",
     "next-themes": "^0.4.6",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.12",
