@@ -1,25 +1,27 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { notFound } from 'next/navigation'
+import { ArrowLeftIcon } from '@radix-ui/react-icons'
 
 import { formatDate } from '@/lib/utils'
 import MDXContent from '@/components/mdx-content'
-import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import { getProjectBySlug, getProjects } from '@/lib/projects'
-import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
   const projects = await getProjects()
-  const slugs = projects.map(project => ({ slug: project.slug }))
-
-  return slugs
+  return projects.map(project => ({ slug: project.slug }))
 }
 
-export default async function Project({
-  params
-}: {
-  params: { slug: string }
-}) {
-  const { slug } = params
+// Updated Type for Next.js 15 compatibility
+type PageProps = {
+  params: Promise<{
+    slug: string
+  }>
+}
+
+export default async function Project({ params }: PageProps) {
+  // CRITICAL: Await params to access the slug
+  const { slug } = await params
   const project = await getProjectBySlug(slug)
 
   if (!project) {
@@ -27,14 +29,15 @@ export default async function Project({
   }
 
   const { metadata, content } = project
-  const { title, image, author, publishedAt ,repo} = metadata
+  const { title, image, author, publishedAt, repo } = metadata
 
   return (
     <section className="py-24 flex justify-center">
       <div className="w-full max-w-3xl px-4">
+        
         <Link
           href="/projects"
-          className="mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground"
+          className="mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground w-fit"
         >
           <ArrowLeftIcon className="h-5 w-5" />
           <span>Back to projects</span>
@@ -43,38 +46,37 @@ export default async function Project({
         {image && (
           <Image
             src={image}
-            alt={title || 'Blog image'}
+            alt={title || 'Project image'}
             width={768}
             height={384}
-            className="object-cover rounded-lg mb-10"
+            className="object-cover rounded-lg mb-10 w-full"
             priority
           />
         )}
 
         <header>
-          <h1 className="title">{title}</h1>
+          <h1 className="text-3xl font-bold tracking-tight">{title}</h1>
           <p className="mt-3 text-xs text-muted-foreground">
             {author} / {formatDate(publishedAt ?? '')}
           </p>
         </header>
 
-        <main className="prose mt-16 dark:prose-invert prose-headings:mb-6 prose-p:mb-5 prose-li:mb-3 prose-img:my-6">
+        {/* prose handles the MDX typography */}
+        <main className="prose dark:prose-invert mt-12 max-w-none">
           <MDXContent source={content} />
 
-     {repo && (
-  <div className="mt-8 flex justify-center">
-    <Link
-      href={repo}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-block border border-black bg-white text-black px-6 py-2 rounded-md font-semibold transition-colors hover:bg-[#333333] hover:text-white"
-    >
-      Repo
-    </Link>
-  </div>
-)}
-
-
+          {repo && (
+            <div className="mt-12 flex justify-start border-t pt-8">
+              <Link
+                href={repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-md bg-foreground px-8 py-2 text-sm font-medium text-background transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              >
+                View Repository
+              </Link>
+            </div>
+          )}
         </main>
       </div>
     </section>

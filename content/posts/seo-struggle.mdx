@@ -1,0 +1,35 @@
+---
+title: "The SEO Struggle: Raw JS, React, and Why I Finally Moved to Next.js"
+summary: I used to think 'if I build it, they will come.' Then I realized Google couldn't even see what I was building. Here is the real talk on SEO for the modern stack.
+image: /posts/seo-showdown.jpg
+author: 'Ashish Kumar Roy'
+publishedAt: '2025-08-25'
+---
+
+I used to think that as long as my code worked on my machine, I was winning. I’d spend weeks perfecting a React component, making the transitions smooth and the UI crisp. But then I’d check Google, and my site was nowhere to be found. 
+
+That was my wake-up call. Coding isn't just about making things work for users; it’s about making them "visible" to the robots that run the internet.
+
+### The "Empty Shell" Trap (Raw JS & React)
+When I started with **Vanilla JS** and later **React (SPAs)**, I loved the speed of the interface. But there’s a catch nobody tells you at the start: when Google’s crawler hits a basic React app, it often sees a blank page.
+
+* **The Problem:** The browser gets an empty `index.html` and a massive JS file. The crawler has to wait, download that JS, execute it, and *then* see the content.
+* **The Reality:** In the real world, crawlers have a "render budget." If your JS takes too long to wake up, the crawler moves on. Your beautiful app stays invisible.
+
+### The Turning Point: Next.js
+I resisted frameworks for a while because I wanted to "do it myself." But once I tried **Next.js**, the game changed. It wasn’t just another tool; it felt like having a senior dev sitting next to me, fixing my SEO mistakes before I even made them.
+
+* **SSR (Server-Side Rendering):** Instead of sending a blank shell, the server sends the full HTML. When Google shows up, the content is already there waiting. 
+* **Performance:** Features like Image Optimization and Font pre-loading meant my "Lighthouse" scores actually stayed green without me fighting the code for hours.
+
+### How the Industry Actually Works
+After breaking enough sites, I realized how the pros handle this. They don't use one tool for everything:
+1.  **For Dashboards:** They stick to React or even Raw JS. If it's behind a login, SEO doesn't matter.
+2.  **For Growth:** If you're building a blog, a store, or a landing page, they use Next.js. Period.
+
+### My Takeaway
+Mastering SEO across these tools wasn't about memorizing keywords. It was about understanding the **flow of data**. It was about realizing that a site that loads fast but can't be found is just a well-built secret.
+
+I’m still learning the quirks of server components and edge runtime, but one thing is clear: if you want your work to be seen, you have to build for the crawlers as much as the humans. 
+
+**Still breaking things, still building better.**
