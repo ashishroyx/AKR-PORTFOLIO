@@ -1,0 +1,40 @@
+---
+title: "Prop Drilling is a Nightmare: How the Context API Saved My Sanity"
+summary: I spent months passing 'user' props through components that didn't even need them. Then I discovered the Context API, and my component tree finally started to breathe.
+image: /posts/context-api.jpg
+author: 'Ashish Kumar Roy'
+publishedAt: '2026-03-12'
+---
+
+We’ve all been there. You have a `User` object at the very top of your app, and you need it way down in the `SettingsButton` tucked inside a `Sidebar`, which is inside a `Dashboard`, which is inside a `Layout`. 
+
+So, like a good soldier, you pass `user={user}` through every... single... one. 
+
+Half of those components don't even care about the user. They’re just "middlemen" in a game of digital hot potato. This is **Prop Drilling**, and it’s the fastest way to make your codebase unreadable.
+
+### The "Aha!" Moment: `createContext`
+The first time I saw the **Context API**, I didn't get it. "A provider? A consumer? A value prop?" It felt like extra boilerplate for no reason. 
+
+But then I built a Dark Mode toggle. 
+
+Trying to pass a `theme` string through twenty components was the breaking point. I set up my first `ThemeContext.Provider`, wrapped my entire app in it, and suddenly—any component, anywhere, could just say `const theme = useContext(ThemeContext)` and *know* the truth. 
+
+No middlemen. No messy props. Just direct access.
+
+### When to Use It (And When to Run Away)
+In 2026, with Next.js and Server Components, the Context API has a specific place. You can't just wrap everything in Context anymore because Context is a **Client-Side** feature. 
+
+* **Use it for:** UI State. Things like "Is the sidebar open?", "Which theme is active?", or "Is the user logged in?"
+* **Don't use it for:** Data fetching or high-frequency updates (like a text input or a game loop). 
+
+Why? Because when a Context value changes, **every** component consuming that context re-renders. If you put too much in there, your app starts to feel sluggish, like it’s wading through mud.
+
+### The "Zustand" Temptation
+As I grew, I realized Context isn't always the answer. Sometimes, for complex global state, I reached for libraries like **Zustand**. But for 90% of my projects? The built-in Context API is more than enough. It’s clean, it’s native, and it doesn't add extra weight to my `package.json`.
+
+### My Takeaway
+Learning Context wasn't just about a new hook (`useContext`). It was about learning **Architecture**. It was the first time I stopped thinking about components as "top-to-bottom" and started thinking about them as a "system."
+
+If you’re currently passing a prop through three levels of components "just because," stop. Create a Context. Your future self (the one debugging this at 2 AM) will thank you.
+
+**Less drilling, more building.**
