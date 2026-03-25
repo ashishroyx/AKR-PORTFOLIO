@@ -32,7 +32,7 @@ export default function Intro() {
         </p>
 
         <div className='mt-4 '>
-          <a href='/AKR-CV.pdf' download>
+          <a href='/Ashish_Kumar_Roy_F_CV.pdf' download>
             <Button className='px-5 py-2 text-sm border border-border shadow-lg shadow-black/20 dark:shadow-white/20'>Download CV</Button>
           </a>
         </div>

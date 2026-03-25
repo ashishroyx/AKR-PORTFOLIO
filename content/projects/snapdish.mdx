@@ -1,0 +1,59 @@
+---
+title: "SnapDish: AI-Powered Smart Recipe Engine"
+summary: "A full-stack culinary platform utilizing Gemini AI Vision to transform ingredients into instant recipes and personalized meal plans."
+image: /projects/snapdish.png
+author: "Ashish Kumar Roy"
+publishedAt: '2026-03-10'
+repo: https://github.com/ashishroyx/snapdish
+---
+
+**SnapDish** is an AI-integrated culinary platform that redefines the cooking experience. By combining **TheMealDB API**, **Strapi CMS**, and **Google Gemini AI**, SnapDish offers an "Infinite Cookbook" experience—bridging the gap between what's in your pantry and what's for dinner.
+
+---
+
+## The Concept: An Infinite Cookbook
+
+Most recipe apps are limited by their database. SnapDish breaks this barrier. If a user wants a dish that doesn't exist in the traditional records, the platform leverages **Generative AI** to construct a professional-grade recipe on the fly. Coupled with a **Visual Pantry Scanner**, it turns your smartphone camera into a culinary expert.
+
+### Core Features
+- **Visual Pantry Scanner** – Uses **Gemini AI Vision** to analyze photos of ingredients, instantly identifying items and populating a digital pantry.
+- **AI Ingredient Matching** – Intelligent suggestion engine that maps your current pantry inventory to relevant, high-quality recipes.
+- **Infinite Recipe Generation** – When a search falls outside the database, **Gemini AI** generates complete recipes including step-by-step instructions and nutritional data.
+- **Tiered Subscription Logic** – Implemented a "Freemium" model with daily AI usage quotas for free users and unlimited access for Pro-tier subscribers.
+- **Secure Authentication** – Managed by **Clerk**, providing seamless social logins and persistent user session management.
+
+---
+
+## Tech Stack
+
+- **Framework**: Next.js 15+ (App Router & Edge Functions)
+- **AI Engine**: Google Generative AI (Gemini Pro Vision)
+- **Content Management**: Strapi (Headless CMS for curated data)
+- **Database**: Neon DB (Serverless PostgreSQL)
+- **External API**: TheMealDB for global recipe data
+- **Authentication**: Clerk (Identity & User Profiles)
+- **Styling**: Tailwind CSS & Shadcn UI
+
+---
+
+## Design & Responsiveness
+
+SnapDish features a **Cinematic UI** specifically built for high-utility environments like kitchens. The design is mobile-first, recognizing that most users will interact with the app while standing at a counter or holding a phone.
+
+- **Mobile-First UX**: Optimized touch targets and "cook-mode" layouts for iPad and smartphone users.
+- **Dynamic Content Loading**: Smooth, non-blocking UI transitions when fetching AI-generated content or scanning images.
+- **Responsive Layouts**: A fluid grid system that scales from a single-column mobile view to a rich, multi-panel desktop dashboard.
+
+---
+
+## Engineering Highlights
+
+- **Multi-Modal AI Integration**: Successfully implemented **Gemini Pro Vision** to handle image-to-text processing for the pantry scanner.
+- **Hybrid Data Strategy**: Combined static data from **TheMealDB** and **Strapi** with dynamic, AI-generated content to ensure the app never returns an "empty" search result.
+- **Subscription Middleware**: Developed custom logic to track and restrict AI API calls based on user tier, preventing resource over-usage while maintaining a smooth UX.
+- **Headless CMS Architecture**: Used **Strapi** to allow for easy updates to curated content without requiring redeployments of the frontend.
+
+---
+
+> *“SnapDish was built to answer the age-old question: 'What can I cook with what I have?' By leveraging Vision AI, I wanted to make the kitchen a place of zero waste and infinite creativity.”*
+---

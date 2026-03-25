@@ -1,0 +1,58 @@
+---
+title: "Guardian: AI-Powered Evidence Vault"
+summary: "A high-fidelity security monitoring system leveraging client-side Machine Learning for real-time object detection and automated evidence logging."
+image: /projects/guardian.png
+author: "Ashish Kumar Roy"
+publishedAt: '2026-02-15'
+repo: https://github.com/ashishroyx/guardian
+---
+
+**Guardian** is a high-fidelity security monitoring and evidence management system. By leveraging **client-side Machine Learning**, it transforms a standard webcam into an intelligent sentinel capable of real-time object detection, person counting, and automated evidence logging—all while keeping data entirely private.
+
+---
+
+## The Vision: Privacy-First Security
+
+In a world of cloud-based surveillance, Guardian takes a different approach. By processing video feeds locally on the user's device, the platform ensures that sensitive visual data never leaves the browser. It combines the power of **TensorFlow.js** with a premium "Cinematic Security" aesthetic to provide professional-grade monitoring for modern users.
+
+### Core Features
+- **Real-time Edge AI** – On-device object detection using **TensorFlow.js** (COCO-SSD model) for instantaneous threat identification.
+- **Evidence Vault** – A date-sorted, high-precision gallery of all detected events, complete with millisecond-accurate timestamps for forensic reliability.
+- **AI Analytics Dashboard** – High-level 24-hour activity density maps and weekly incident reports powered by **Recharts**.
+- **Tamper-Proof Controls** – Advanced bulk-deletion logic (24h / 7d / 30d) and granular "Purge" capabilities for secure data lifecycle management.
+- **Privacy First** – Integrated with **Supabase Row Level Security (RLS)** to ensure total data isolation between users.
+
+---
+
+## Tech Stack
+
+- **Framework**: Next.js (App Router & Turbopack)
+- **AI / Machine Learning**: TensorFlow.js with COCO-SSD Model
+- **Database & Storage**: Supabase (PostgreSQL) & S3 Buckets for encrypted snapshots
+- **Authentication**: Clerk (Secure User Management)
+- **Frontend & UI**: Tailwind CSS, React Webcam, and Lucide React
+- **Visualization**: Recharts (Activity Graphing)
+
+---
+
+## Design & Responsiveness
+
+The "Linen & Charcoal" UI of Guardian is designed to feel like a premium security command center. It balances high-density information with a clean, cinematic aesthetic that is fully optimized for all devices.
+
+- **Cross-Platform Optimization**: The interface is fully responsive, ensuring a seamless experience across **Mobile, Tablet, and Desktop** browsers.
+- **Stream Handling**: Optimized **React Webcam** integration to handle continuous video analysis without significant CPU overhead.
+- **Interactive Analytics**: Fully responsive charts that adapt to screen size, providing clear security insights whether you're on a phone or a large monitor.
+
+---
+
+## Engineering Highlights
+
+- **Client-Side ML**: Successfully implemented local model execution, removing the need for expensive server-side video processing and enhancing user privacy.
+- **Secure Storage**: Leveraged **Supabase S3 Buckets** to store encrypted evidence snapshots, ensuring that even if data is stored in the cloud, it remains inaccessible to unauthorized parties.
+- **Data Integrity**: Implemented complex deletion logic to maintain a clean and reliable evidence trail, essential for a security-focused application.
+- **Real-Time Logging**: Built a custom event-listener system that triggers evidence captures the moment a specific object (e.g., a person) is detected by the AI.
+
+---
+
+> *“Guardian was built to prove that high-end security monitoring doesn't have to come at the cost of personal privacy. By running AI at the edge, we put the power back in the user's hands.”*
+---
