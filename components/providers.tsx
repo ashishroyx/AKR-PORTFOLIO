@@ -1,6 +1,7 @@
 'use client'
 
 import { ThemeProvider, useTheme } from 'next-themes'
+import OnekoCursor from '@/components/oneko-cursor'
 import { Toaster } from '@/components/ui/sonner'
 
 export default function Providers({ children }: { children: React.ReactNode }) {
@@ -11,6 +12,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       defaultTheme='light'
       disableTransitionOnChange
     >
+      <OnekoCursor />
       {children}
       <ToasterProvider />
     </ThemeProvider>

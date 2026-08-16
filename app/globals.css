@@ -224,3 +224,165 @@
   background-color: #0d0f13; /* Tailwind’s gray-800 */
 }
 
+/* Parth-style navbar (https://parthh.in/) */
+.nav-track {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.11),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.78),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.025),
+    0 0 0 1px rgba(0, 0, 0, 0.5),
+    0 10px 26px rgba(0, 0, 0, 0.34);
+}
+
+.dark .nav-track {
+  border-color: rgba(255, 255, 255, 0.105);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.11),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.78),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.025),
+    0 10px 26px rgba(0, 0, 0, 0.34);
+}
+
+.nav-action-btn {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  height: 2.75rem;
+  width: 2.75rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.nav-action-btn-compact {
+  height: 1.875rem;
+  width: 1.875rem;
+}
+
+.nav-action-btn:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.nav-pill {
+  isolation: isolate;
+}
+
+/* Circle fills each pill — scales with link width */
+.nav-pill-hover-circle {
+  transform: scale(0);
+  transform-origin: 50% 100%;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.nav-pill:hover .nav-pill-hover-circle,
+.nav-pill:focus-visible .nav-pill-hover-circle,
+.nav-pill-hover-circle.is-visible,
+.nav-pill-active .nav-pill-hover-circle {
+  transform: scale(1);
+}
+
+.nav-pill-label-stack {
+  height: 1em;
+  overflow: hidden;
+  line-height: 1;
+}
+
+.nav-pill-label,
+.nav-pill-label-hover {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+
+.nav-pill-label-hover {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.nav-pill:hover .nav-pill-label,
+.nav-pill:focus-visible .nav-pill-label,
+.nav-pill-active .nav-pill-label {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.nav-pill:hover .nav-pill-label-hover,
+.nav-pill:focus-visible .nav-pill-label-hover,
+.nav-pill-active .nav-pill-label-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-pill-active {
+  color: #000;
+}
+
+.nav-pill-active:hover {
+  color: #000;
+}
+
+.nav-theme-btn {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  height: 100%;
+  min-height: 30px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.035);
+  padding: 0.375rem 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.55);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-theme-btn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+}
+
+/* Theme toggle — circle reveal (View Transitions API, parthh.in-style) */
+::view-transition-group(root) {
+  animation-duration: 0s !important;
+}
+
+:root.theme-transition::view-transition-old(root),
+:root.theme-transition::view-transition-new(root) {
+  mix-blend-mode: normal;
+  animation: none !important;
+}
+
+:root.theme-transition::view-transition-old(root) {
+  z-index: 1;
+}
+
+:root.theme-transition::view-transition-new(root) {
+  z-index: 9999;
+}
+
+.oneko-cursor {
+  view-transition-name: none;
+}
