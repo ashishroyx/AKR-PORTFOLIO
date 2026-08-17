@@ -3,6 +3,7 @@
 import { ThemeProvider, useTheme } from 'next-themes'
 import OnekoCursor from '@/components/oneko-cursor'
 import { Toaster } from '@/components/ui/sonner'
+import ViewTransitionProvider from '@/components/view-transition-provider'
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -12,9 +13,11 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       defaultTheme='light'
       disableTransitionOnChange
     >
-      <OnekoCursor />
-      {children}
-      <ToasterProvider />
+      <ViewTransitionProvider>
+        <OnekoCursor />
+        {children}
+        <ToasterProvider />
+      </ViewTransitionProvider>
     </ThemeProvider>
   )
 }

@@ -1,18 +1,19 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter, Outfit, Playfair_Display } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
-
 
 import './globals.css'
 import Providers from '@/components/providers'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import GlassBlurFilter from '@/components/glass-blur-filter'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' })
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-serif'
+  variable: '--font-serif',
 })
 
 export const metadata: Metadata = {
@@ -42,13 +43,18 @@ export default function RootLayout({
         className={cn(
           'flex min-h-screen flex-col font-sans antialiased',
           inter.variable,
+          outfit.variable,
           playfair.variable
         )}
       >
         <Providers>
-          <Header />
-          <main className='grow'>{children}</main>
-          {/* <Footer /> */}
+          <GlassBlurFilter />
+          <div className='portfolio-guardrails' aria-hidden='true' />
+          <div className='portfolio-page-shell flex min-h-screen flex-col'>
+            <Header />
+            <main className='grow'>{children}</main>
+            {/* <Footer /> */}
+          </div>
         </Providers>
       </body>
     </html>
