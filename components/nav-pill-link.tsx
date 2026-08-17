@@ -55,7 +55,7 @@ export default function NavPillLink({
         if (!isActive) onHoverEnd?.(index)
       }}
       className={cn(
-        'nav-pill relative inline-flex h-full items-center justify-center overflow-hidden rounded-full px-4 py-1.5 text-sm font-light leading-none no-underline transition-[color,text-shadow] duration-500',
+        'nav-pill relative inline-flex h-full items-center justify-center overflow-hidden rounded-full px-4 py-2 text-sm font-light no-underline transition-[color,text-shadow] duration-500',
         isActive ? 'active-pill text-black' : 'text-white/90 hover:text-white'
       )}
       style={{ background: 'transparent' }}
@@ -84,11 +84,11 @@ export default function NavPillLink({
         </motion.div>
       )}
 
-      <span className='label-stack relative z-[2] inline-block leading-none'>
-        <span className='pill-label relative z-[2] inline-block font-outfit text-sm font-light leading-none'>
+      <span className='label-stack relative z-[2] inline-block'>
+        <span className='pill-label relative z-[2] inline-block font-outfit text-sm font-light leading-[1.375rem]'>
           {label}
         </span>
-        <span className='pill-label-hover absolute left-0 top-0 z-[3] inline-block font-outfit text-sm font-light text-black'>
+        <span className='pill-label-hover absolute left-0 top-0 z-[3] inline-block font-outfit text-sm font-light leading-[1.375rem] text-black'>
           {label}
         </span>
       </span>

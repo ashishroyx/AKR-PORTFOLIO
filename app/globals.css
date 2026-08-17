@@ -349,9 +349,9 @@
 
 .label-stack,
 .nav-pill-label-stack {
-  height: 1em;
+  height: 1.375rem;
   overflow: hidden;
-  line-height: 1;
+  line-height: 1.375rem;
 }
 
 .pill-label,
@@ -359,6 +359,7 @@
 .nav-pill-label,
 .nav-pill-label-hover {
   display: block;
+  line-height: 1.375rem;
 }
 
 .nav-pill:not(.active-pill) .pill-label {

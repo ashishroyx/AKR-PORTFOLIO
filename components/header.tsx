@@ -80,7 +80,7 @@ export default function Header() {
           <HeaderBrand />
 
           <div className='relative z-50 flex flex-1 justify-center'>
-            <div className='nav-track relative isolate flex h-[42px] items-center overflow-visible rounded-full px-1.5 py-1'>
+            <div className='nav-track relative isolate flex h-[44px] items-center overflow-visible rounded-full px-1.5 py-1'>
               <LayoutGroup id='main-nav-pills'>
                 <ul className='relative z-[3] m-0 flex h-full list-none items-center gap-0 p-0'>
                   {navItems.map((link, index) => (
