@@ -29,8 +29,9 @@ export default function QuixtaExperiencePage() {
           </p>
           <h1 className='title no-underline text-3xl sm:text-4xl'>Quixta</h1>
           <p className='max-w-2xl text-sm font-semibold text-muted-foreground sm:text-base'>
-            Frontend Developer. Notable work across the public site, CMS
-            platforms, and production product surfaces.
+            Frontend Developer (Apr 2026 — Sep 2026), promoted to Junior Full
+            Stack Developer (Sep 2026 — Present). Notable work across the public
+            site, CMS platforms, and production product surfaces.
           </p>
         </header>
 
